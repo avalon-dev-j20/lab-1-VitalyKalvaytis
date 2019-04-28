@@ -1,5 +1,5 @@
 package ru.avalon.java.j20.labs.models;
-
+import java.util.Objects;
 /**
  * Представление о человеке.
  */
@@ -24,7 +24,22 @@ public class Person {
         this.name = name;
         this.surname = surname;
     }
-
+    
+    @Override
+    public int hashCode(){
+        return Objects.hash(name, surname);
+    }
+    
+    @Override
+    public boolean equals(Object otherObj){
+        if (this == otherObj){
+            return true;
+        } if (otherObj instanceof Person){
+            Person otherPerson = (Person) otherObj;
+            return name.equals(otherPerson.name) && 
+                    surname.equals(otherPerson.surname);
+        } return false;
+    }
     /**
      * возвращает имя человека.
      *
