@@ -1,7 +1,7 @@
 package ru.avalon.java.j20.labs.tasks;
 
 import ru.avalon.java.j20.labs.Task;
-
+import ru.avalon.java.j20.labs.models.Point;
 /**
  * Задание №2.
  *
@@ -14,6 +14,13 @@ public class Task2 implements Task {
      */
     @Override
     public void run() {
+        Point floatPoint = new Point (7.f, 4.f);
+        Point intPoint = new Point (2, 3);
+        
+        double distance = intPoint.distanceTo(floatPoint);
+        
+        System.out.println("Task2");
+        System.out.println(distance);
         /*
          * TODO(Студент): Выполнять задание №2
          *
